@@ -1,13 +1,8 @@
-import csv
-
-import numpy as np
 import pandas as pd
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
 from IDLE.commons.commonUtils import plot_for_one_model
-import matplotlib
-import matplotlib.pyplot as plt
 
 print(tf.__version__)
 

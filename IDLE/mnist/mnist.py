@@ -79,7 +79,7 @@ except FileNotFoundError:
 
     final_history = final_model.fit(
         dataGenerator,
-        epochs=1,
+        epochs=20,
         steps_per_epoch=train_images.shape[0] // 64,
         validation_data=(val_images, y_valid),
         callbacks=[callbacks]

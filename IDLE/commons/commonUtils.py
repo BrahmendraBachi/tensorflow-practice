@@ -338,4 +338,3 @@ class MyCallback(tf.keras.callbacks.Callback):
 
     def get_all_model_weights(self):
         return self.all_model_weights
-

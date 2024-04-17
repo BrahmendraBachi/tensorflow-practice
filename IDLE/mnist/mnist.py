@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
 from IDLE.commons.commonUtils import plot_for_one_model, MyCallback
 
-print(tf.__version__)
+# print(tf.__version__)
 
 final_model = tf.keras.models.Sequential([
     tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),

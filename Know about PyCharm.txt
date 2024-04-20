@@ -1,0 +1,26 @@
+Third Party Library
+Performance assistance --> Installing it will give assistance about keyorad shortcuts in pyCharm
+
+
+CTRL + ALT + Enter  ==> Start New line before Current
+CTRL + Enter        ==> Select Word (contiously press the same keyword to select the entire line)
+CTRL + SHFT + Enter ==> Opposite to (CTRL + Enter)
+CTRL + ALT + L      ==> Formatting Code
+CTRL + SHFt + UP    ==> Swapping lines (or) Changing line order to up
+CTRL + SHFt + DOWN  ==> Swapping lines (or) Changing line order to down
+SHFT + SHFT         ==> Searching through everything
+CTRL + E            ==> Open recent files
+CTRL + SHFT + E     ==> Open recently edited files
+CTRL + O            ==> For auto completing few commonly used methods
+ALT + 4             ==> Open Console
+CTRL + ALT + V      ==> Create a new variable by selecting a string or any content
+CTRL + ALT + M      ==> Select a peice of code and create a method of it
+CTRL + D            ==> Duplicate line of code
+CTRL + ALT + P      ==> Select a string and pass it as an argument with in a method
+SHFT + F6           ==> Rename and Refactor file name (or) any selecting string in every place
+CTRL + R            ==> Replace selected string
+CTRL + G            ==> Go to line number (cursor)
+CTRL + SHFT + A     ==> Actions to see all the keyboard shortcuts
+ALT + J             ==> Select next occurence of a selected string
+CTRL + ALT + S      ==> Open Settings
+SHFT + F4           ==> Open Selected file as a popup

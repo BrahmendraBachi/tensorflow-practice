@@ -6,6 +6,8 @@ from IDLE.commons.commonUtils import plot_for_one_model, MyCallback
 
 # print(tf.__version__)
 
+isTraining = False
+
 final_model = tf.keras.models.Sequential([
     tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
     tf.keras.layers.BatchNormalization(),
@@ -38,6 +40,8 @@ eff_model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=
 callbacks = MyCallback()
 
 try:
+    if isTraining:
+        raise FileNotFoundError()
     final_model.load_weights('mnist_model.keras')
     final_model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['acc'])
     print("weights exists")

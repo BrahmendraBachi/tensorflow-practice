@@ -5,6 +5,8 @@ from tensorflow.keras.datasets import fashion_mnist
 
 print(tf.__version__)
 
+isTraining = False
+
 (X_train, Y_train), (X_test, Y_test) = fashion_mnist.load_data()
 
 Y_train = to_categorical(Y_train, num_classes=10)
@@ -64,6 +66,8 @@ eff_model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=
 callbacks = MyCallback()
 
 try:
+    if isTraining:
+        raise FileNotFoundError()
     final_model.load_weights('fashion_mnist_model.keras')
     final_model.compile(optimizer='rmsprop', loss='categorical_crossentropy', metrics=['acc'])
     print("weights exists")

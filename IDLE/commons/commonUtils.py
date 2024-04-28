@@ -1,3 +1,4 @@
+import requests
 import matplotlib.pyplot as plt
 import tensorflow as tf
 import os
@@ -21,8 +22,8 @@ def plotForOneResult(x_labelData, y_labelData, x_label='', y_label='', labelName
 
 def plotForTwoResults(x_data, y1_data, y2_data, x_label='', y_label='', y1_label='', y2_label='', title='',
                       isLegend=True, isShow=False, isGrid=True):
-    plt.plot(x_data, y1_data, 'bo', label=y1_label)
-    plt.plot(x_data, y2_data, 'b', label=y2_label)
+    plt.plot(x_data, y1_data, label=y1_label)
+    plt.plot(x_data, y2_data, label=y2_label)
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
@@ -33,7 +34,7 @@ def plotForTwoResults(x_data, y1_data, y2_data, x_label='', y_label='', y1_label
         plt.show()
 
 
-def plot_for_one_model(history, isValidation=False):
+def plot_for_one_model(history, isValidation=False, is_save=False, location=""):
     epochs = range(1, len(history.history['loss']) + 1)
 
     training_loss = history.history['loss']
@@ -95,7 +96,13 @@ def plot_for_one_model(history, isValidation=False):
             title="Training_Accuracy",
             isShow=False
         )
-
+    if is_save:
+        if location:
+            if os.path.exists(location):
+                os.remove(location)
+            plt.savefig(location)
+        else:
+            raise Exception("valid location is required")
     plt.show()
 
 
@@ -339,3 +346,13 @@ class MyCallback(tf.keras.callbacks.Callback):
     def get_all_model_weights(self):
         return self.all_model_weights
 
+
+def download_dataset(url, save_path=""):
+    response = requests.get(url)
+    if response.status_code == 200:
+        # Save the content to a file
+        with open(save_path, "wb") as file:
+            file.write(response.content)
+        print("Dataset downloaded successfully.")
+    else:
+        print("Failed to download dataset.")

@@ -161,6 +161,6 @@ cython_debug/
 
 IDLE/commons/test/testPython.py
 
-IDLE/Data/Horses_Vs_Humans
+IDLE/Data/Horses_Vs_Humans/
 
 #.idea/.gitignore

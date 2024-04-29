@@ -1,0 +1,6 @@
+ERROR 1:
+    ValueError: This model has not yet been built. Build the model first by calling `build()` or by calling the model on a batch of data.
+REASON: (possible)
+    1. input_shape attribute in the first conv layer is missing
+    2. training the model before it compiles
+

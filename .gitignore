@@ -161,6 +161,6 @@ cython_debug/
 
 IDLE/commons/test/testPython.py
 
-IDLE/Data/Horses_Vs_Humans/
+IDLE/cats_vs_dogs/pretrained_model/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.keras
 
 #.idea/.gitignore

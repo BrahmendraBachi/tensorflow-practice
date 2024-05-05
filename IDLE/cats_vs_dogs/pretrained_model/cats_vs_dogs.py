@@ -1,8 +1,8 @@
 import os
 import tensorflow as tf
 import zipfile
-from IDLE.commons.commonUtils import plot_for_one_model, MyCallback
-from IDLE.commons.commonUtils import download_dataset
+from Commons.commonUtils import plot_for_one_model, MyCallback
+from Commons.commonUtils import download_dataset
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications import InceptionV3
 from tensorflow.keras.layers import Flatten, Dense
@@ -58,7 +58,7 @@ try:
     eff_model.compile(optimizer=tf.keras.optimizers.RMSprop(learning_rate=0.001), loss='binary_crossentropy', metrics=['acc'])
     print("efficient weights exists")
 except:
-    base_path = "C:/Users/Brahmendra Bachi/PycharmProjects/tensorflow-practice/Data/Cats_Vs_Dogs"
+    base_path = "C:/Users/haor1122/PycharmProjects/tensorflow-practice/Data/Cats_Vs_Dogs"
     data_zip_dir = os.path.join(base_path, "cats_and_dogs.zip")
     if not os.path.exists(base_path):
         os.mkdir(base_path)
@@ -118,5 +118,3 @@ except:
 
     plot_for_one_model(history=final_history, isValidation=True, is_save=True,
                        location="history.png")
-
-

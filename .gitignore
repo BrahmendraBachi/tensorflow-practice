@@ -159,7 +159,7 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
 
-IDLE/commons/test/testPython.py
+Commons/test/testPython.py
 
 IDLE/cats_vs_dogs/pretrained_model/inception_v3_weights_tf_dim_ordering_tf_kernels_notop.keras
 

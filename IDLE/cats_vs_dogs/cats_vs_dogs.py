@@ -1,8 +1,8 @@
 import os
 import tensorflow as tf
 import zipfile
-from IDLE.commons.commonUtils import plot_for_one_model, MyCallback
-from IDLE.commons.commonUtils import download_dataset
+from Commons.commonUtils import plot_for_one_model, MyCallback
+from Commons.commonUtils import download_dataset
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # print(tf.__version__)

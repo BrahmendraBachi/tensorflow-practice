@@ -1,6 +1,6 @@
 import tensorflow as tf
 from tensorflow.keras.utils import to_categorical
-from IDLE.commons.commonUtils import MyCallback
+from Commons.commonUtils import MyCallback
 from tensorflow.keras.datasets import fashion_mnist
 
 print(tf.__version__)

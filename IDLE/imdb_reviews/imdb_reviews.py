@@ -24,7 +24,7 @@ EMBEDDING_DIM = 64
 def main():
     global is_Training
     callbacks = MyCallback()
-    if not (os.path.exists("imdb_reviews_model.h5") or os.path.exists("eff_imdb_reviews_model.h5")):
+    if not (os.path.exists("imdb_reviews_model.keras") or os.path.exists("eff_imdb_reviews_model.keras")):
         is_Training = True
 
     all_data = prepare_dataset()
@@ -36,8 +36,8 @@ def main():
     final_model, eff_model = build_model()
 
     if not is_Training:
-        final_model.load_weights('imdb_reviews_model.h5')
-        eff_model.load_weights('eff_imdb_reviews_model.h5')
+        final_model.load_weights('imdb_reviews_model.keras')
+        eff_model.load_weights('eff_imdb_reviews_model.keras')
 
         print("Evaluating Model: ")
         result1 = final_model.evaluate(x_test, y_test)

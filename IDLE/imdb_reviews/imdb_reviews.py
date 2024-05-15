@@ -42,7 +42,7 @@ def main():
         print("Evaluating Model: ")
         result1 = final_model.evaluate(x_test, y_test)
         print("Evaluating Efficient Model: ")
-        result2 = final_model.evaluate(x_valid, y_valid)
+        result2 = eff_model.evaluate(x_valid, y_valid)
         return
 
     final_history = final_model.fit(
@@ -62,11 +62,7 @@ def main():
     print("Evaluating Model: ")
     result1 = final_model.evaluate(x_test, y_test)
     print("Evaluating Efficient Model: ")
-    result2 = final_model.evaluate(x_valid, y_valid)
-
-
-
-
+    result2 = eff_model.evaluate(x_valid, y_valid)
 
 
 def build_model():

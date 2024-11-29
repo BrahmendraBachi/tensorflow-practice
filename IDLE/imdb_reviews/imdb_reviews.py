@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 from Commons.commonUtils import MyCallback, plot_for_one_model
 
-is_Training = False
+is_Training = True
 
 # Download the plain text dataset
 
@@ -20,6 +20,7 @@ OOV_TOKEN = "<OOV>"
 
 # After Experiment
 EMBEDDING_DIM = 64
+
 
 def main():
     global is_Training
@@ -75,12 +76,15 @@ def build_model():
         tf.keras.layers.Dense(1, activation='sigmoid')
     ])
 
-    final_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), loss='binary_crossentropy', metrics=["acc"])
+    final_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), loss='binary_crossentropy',
+                        metrics=["acc"])
     final_model.summary()
     eff_model = tf.keras.models.clone_model(final_model)
-    eff_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), loss='binary_crossentropy', metrics=["acc"])
+    eff_model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.001), loss='binary_crossentropy',
+                      metrics=["acc"])
 
     return final_model, eff_model
+
 
 def prepare_dataset():
     print("Downloading Dataset......")
@@ -122,6 +126,6 @@ def prepare_dataset():
         "test": {"test_X": padded_test, "test_Y": test_labels}
     }
 
+
 if __name__ == "__main__":
     main()
-

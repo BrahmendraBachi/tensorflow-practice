@@ -6,7 +6,7 @@ from Commons.commonUtils import download_dataset
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # print(tf.__version__)
-isTraining = True
+isTraining = False
 
 TRAIN_DATA_URL = "https://storage.googleapis.com/download.tensorflow.org/data/horse-or-human.zip"
 VALIDATION_DATA_URL = "https://storage.googleapis.com/download.tensorflow.org/data/validation-horse-or-human.zip"

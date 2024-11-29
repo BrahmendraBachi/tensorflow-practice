@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 from Commons.commonUtils import MyCallback, plot_for_one_model
 
-is_Training = True
+is_Training = False
 
 # Download the plain text dataset
 

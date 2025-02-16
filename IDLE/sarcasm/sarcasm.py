@@ -25,6 +25,8 @@ VOCAB_SIZE = 10000
 EMBEDDING_DIM = 16
 DROPOUT = 0.1
 DENSE_LAYERS = 64
+
+
 def main():
     global is_Training
 
@@ -68,9 +70,6 @@ def main():
     eff_result = evaluate_model(eff_model, x_test, y_test)
 
     plot_for_one_model(final_history, isValidation=True, is_save=True, location="history.png")
-
-
-
 
 
 def prepare_dataset():
@@ -128,6 +127,7 @@ def prepare_dataset():
         "test": {"test_X": padded_test, "test_Y": test_labels}
     }
 
+
 def get_model():
     final_model = tf.keras.models.Sequential([
         tf.keras.layers.Embedding(VOCAB_SIZE, EMBEDDING_DIM, input_length=MAX_LEN),
@@ -145,12 +145,12 @@ def get_model():
     eff_model = tf.keras.models.clone_model(final_model)
     eff_model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["acc"])
 
-
     return final_model, eff_model
+
 
 def evaluate_model(model, x_test, y_test):
     return model.evaluate(x_test, y_test)
 
-if __name__== "__main__":
-    main()
 
+if __name__ == "__main__":
+    main()
